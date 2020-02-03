@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>이벤트를 발생시키고 수신하기</title>
+  </head>
+  <body>
+    <div id="app">
+      <child-component v-on:show-log="printText"></child-component>
+    </div>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    </script>
+
+    <script>
+        Vue.component('child-component',{
+          template : '<button v-on:click="showLog">show</button>',
+          methods : {
+            showLog : function() {
+              this.$emit('show-log');
+            }
+          }
+        });
+
+        var app = new Vue({
+          el : '#app',
+          data : {
+            'message' : 'Hello Vue! passed from Parent Component'
+          },
+          methods : {
+            printText: function() {
+              console.log("receive an event");
+            }
+          }
+        });
+    </script>
+  </body>
+</html>
