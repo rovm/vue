@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>js expression example2</title>
+  </head>
+  <body>
+    <div id="app">
+      {{var a = 10;}} <!-- 실행 불가 --->
+      {{if(true) {return 100}}} <!-- 실행 불가 --->
+      {{true ? 100 : 0}}
+
+      {{message.split('').reverse().join('')}}  <!-- 가독성을 높이기 위해서 computed 속성으로 계산하는 것을 추천 --->
+      {{reversedMessage}}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue.js!'
+        },
+        computed:{ // 데이터 속성을 자동으로 계산해 주는 속성
+          reversedMessage: function() {
+            return this.message.split('').reverse().join('');
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
