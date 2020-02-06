@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>computed & methods</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>자동: {{reversedMessage}}</p>
+
+      <p>반자동: {{message}}</p>
+      <button v-on:click="reverseMsg">문자열 역순</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data:{
+          message: 'Hello Vue.js!'
+        },
+        computed:{
+          reversedMessage: function() {
+            return this.message.split('').reverse().join('');
+          }
+        },
+        methods: {
+          reverseMsg: function() {
+            this.message = this.message.split('').reverse().join('');
+            return this.message;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
