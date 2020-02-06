@@ -1,52 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue Named View Sample</title>
+    <title>Vue Resource Sample</title>
   </head>
   <body>
     <div id="app">
-      <router-view name='header'></router-view>
-      <router-view></router-view>
-      <router-view name='footer'></router-view>
+      <button v-on:click="getData">프레임워크 목록 가져오기</button>
     </div>
-    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
-    <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
     <script>
-      var Body = {template: '<div>This is Body</div>'};
-      var Header = {template: '<div>This is Header</div>'};
-      var Footer = {template: '<div>This is Footer</div>'};
-
-      var loginBody = {template: '<div>This is loginBody</div>'};
-      var loginHeader = {template: '<div>This is loginHeader</div>'};
-      var loginFooter = {template: '<div>This is loginFooter</div>'};
-
-      var router = new VueRouter({
-        routes: [
-          {
-            path: '/',
-            components:{
-              default: Body,
-              header: Header,
-              footer: Footer
-            }
-          },
-          {
-            path: '/login',
-            components:{
-              default: loginBody,
-              header: loginHeader,
-              footer: loginFooter
-            }
+      new Vue({
+        el: '#app',
+        methods: {
+          getData: function() {
+            this.$http.get(`https://raw.githubusercontent.com/joshua1988/doit-vuejs/master/data/demo.json`)
+                .then(function(response) {
+                  console.log(response);
+                  console.log(JSON.parse(response.data));
+                });
           }
-        ]
+        }
       });
-
-      var app = new Vue({
-        router
-      }).$mount('#app');
     </script>
   </body>
 </html>
