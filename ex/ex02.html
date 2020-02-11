@@ -5,17 +5,28 @@
   </head>
   <body>
     <div id="app">
-      {{message}}
+      {{message}} <!-- 인스턴스 유효범위  -->
     </div>
+      <!-- {{message}} 인스턴스 유효범위 X -->
     <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
     </script>
     <script>
-        new Vue({
-          el: '#app',
+        // 뷰 인스턴스
+        new Vue({ // 뷰 생성자 - 필요한 기능들을 미리 정의해 두고 사용하면서 기존의 기능을 쉽게 확장하고 사용하는 기법
+          el: '#app',// el = html 대상이 되는 태그 또는 css 셀렉터
           data:{
             message:'Hello Vue.js'
           }
         });
+        /* template 속성
+         * 화면에 표시할 HTML, CSS 등의 마크업 요소를 정의하는 속성
+         *
+         * methods 속성
+         * 화면 로직 제어와 관계된 메서드를 정의하는 속성 (Jquery의 click,change와 같은 함수가 실행 되었을때 실행됨)
+         *
+         * created 속성
+         * 뷰 인스턴스가 생성되자마자 실행할 로직을 정의할 수 있는 속성
+         */
     </script>
   </body>
 </html>
