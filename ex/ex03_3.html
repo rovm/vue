@@ -5,13 +5,25 @@
   </head>
   <body>
     <div id="app">
-      <button>컴포넌트 등록</button> 
+      <button>컴포넌트 등록</button>
+      <!--전역 컴포넌트 표시 -->
       <my-component></my-component>
+    <!-- 사용자 정의 태그 : HTML 표준 태그들 이외에도 웹개발자가 직접 정의하여 사용 할 수 있는 태그
+         케밥 기법 : 변수가 단어의 조합으로 이루어져 있을때, 단어와 단어 사이를 -로 있는 변수 명명 방식(ex: my-component, my-global-component)
+
+         전역 컴포넌트 처리 과정
+        1. 뷰라이브러리 파일 로딩
+        2. 뷰 생성자료 컴포넌트 등록 Vue.component()
+        3. 인스턴스 객체 생성(옵션 속성 포함)
+        4. 특정 화면 요소에 인스턴스 부착
+        5. 인스턴스 내용 변환(등록된 컴포넌트 내용도 반환) // <my-component> 가 <div>로 변환됨
+        6. 변환된 화면 요소를 사용자가 최종 확인
+     -->
     </div>
     <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
     </script>
-    <!-- 전역 컴포넌트 등록 -->
     <script>
+        //전역 컴포넌트 등록
         Vue.component('my-component',{
           template: '<div>전역 컴포넌트가 등록되었습니다.</div>'
         });
