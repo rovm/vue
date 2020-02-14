@@ -5,17 +5,17 @@
   </head>
   <body>
     <div id="app">
-      <child-component v-on:show-log="printText"></child-component>
+      <child-component v-on:show-log="printText"></child-component> <!-- v-on은 이벤트 수신시-->
     </div>
     <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
     </script>
 
     <script>
         Vue.component('child-component',{
-          template : '<button v-on:click="showLog">show</button>',
+          template : '<button v-on:click="showLog">show</button>', // 버튼 요소 추가
           methods : {
             showLog : function() {
-              this.$emit('show-log');
+              this.$emit('show-log'); // 이벤트 발생시
             }
           }
         });
@@ -25,7 +25,7 @@
           data : {
             'message' : 'Hello Vue! passed from Parent Component'
           },
-          methods : {
+          methods : { // 이벤트가 발생될때 마다 실행
             printText: function() {
               console.log("receive an event");
             }
