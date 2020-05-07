@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      function createLotto() {
+        var max = 46;
+        var min = 1;
+        var lottoNum = [];
+        for(let i=0; i<6; i++){
+            let num = parseInt(Math.random() * (max - min) + min);
+            if(lottoNum.some(x => x === num)){
+                i--;
+                continue;
+            } else{
+                lottoNum.push(num)
+            }
+        }
+
+        lottoNum.sort((a,b) => a - b).forEach((v, i) => {
+            let ball = document.getElementsByClassName('ball')[i]
+
+            if(1<= v && v <=10){
+              ball.style.backgroundColor = "#fbfba6";
+            } else if(11<= v && v <=20){
+              ball.style.backgroundColor = "#a7a7fb";
+            } else if(21<= v && v <=30){
+              ball.style.backgroundColor = "#fbaeae";
+            } else if(31<= v && v <=40){
+              ball.style.backgroundColor = "#cccccc";
+            } else {
+              ball.style.backgroundColor = "#b2f3b2";
+            }
+
+            ball.innerText = v
+        });
+      }
+    </script>
+    <style>
+       .conTbl{
+         border:1px solid #afabab;
+         border-radius: 10px;
+         padding: 10px;
+       }
+
+       .ball{
+         width: 40px;
+         height: 40px;
+         border-radius: 30px;
+         border: 1px solid black;
+         text-align: center;
+         font-size: 20px;
+         margin: 0px 3px;
+       }
+
+       .con{
+         position: relative;
+         width: 300px;
+       }
+
+       .con button{
+         float: right;
+         margin-top: 10px;
+         border: 1px solid gray;
+       }
+   </style>
+  </head>
+
+  <body>
+      <h2>로또 번호 생성기</h2>
+      <div class="con">
+        <table class="conTbl">
+          <tbody>
+              <tr>
+                <td class='ball' style="background: #fbfba6;">L</td>
+                <td class='ball' style="background: #a7a7fb;">O</td>
+                <td class='ball' style="background: #fbaeae;">T</td>
+                <td class='ball' style="background: #cccccc;">T</td>
+                <td class='ball' style="background: #b2f3b2;">O</td>
+                <td class='ball' style="background: pink;">♡</td>
+              </tr>
+          </tbody>
+        </table>
+        <button type="button" name="button" onclick="createLotto()">번호 생성하기</button>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+  </body>
+
+</html>
