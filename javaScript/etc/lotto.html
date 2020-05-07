@@ -5,11 +5,11 @@
     <title></title>
     <script type="text/javascript">
       function createLotto() {
-        var max = 46;
+        var max = 45;
         var min = 1;
         var lottoNum = [];
         for(let i=0; i<6; i++){
-            let num = parseInt(Math.random() * (max - min) + min);
+            let num = parseInt(Math.random() * max + min);
             if(lottoNum.some(x => x === num)){
                 i--;
                 continue;
