@@ -45,6 +45,190 @@
         top: 200px;
         background-color: red;
       }
+
+      @-webkit-keyframes example3{
+        	0% {
+        		background-color: green;
+        		transform: rotate(360deg);
+        		left: 0px;
+        		top: 0px;
+        	}
+        	25% {
+        		background-color: blue;
+        		transform: rotate(-360deg);
+        		left: 200px;
+        		top: 0px;
+        	}
+        	50% {
+        		background-color: yellow;
+        		transform: rotate(360deg);
+        		left: 200px;
+        		top: 200px;
+
+        	}
+        	75% {
+        		background-color: aqua;
+        		transform: rotate(-360deg);
+        		left: 0px;
+        		top: 200px;
+        	}
+        	100% {
+        		background-color: red;
+        		transform: rotate(360deg);
+        		left: 0px;
+        		top: 0px;
+        	}
+        }
+
+        /* div {
+          animation-name: example3;
+          animation-duration: 4s;
+          animation-iteration-count: 3;
+          animation-iteration-count: infinite;
+          animation-direction: reverse;
+          animation-timing-function: ease;
+
+          ease : 조금 부드럽고 빠르게 속성값에 진입하여 천천히 부드럽게 멈춘다.
+          linear : 물리시간에 등.속.운.동이라고 배운 일.직.선 운동이다.
+          ease-in : 천천히 부드럽게 시작하여 점점 빠르게 속성값에 다다른다.
+          ease-out : ease-in 과 반대로 빠르게 시작하여 점점 천천히 도달한다.
+          ease-in-out : ease-in 으로 시작하여 ease-out 으로 끝나는 운동, 천천히 부드럽게 시작하여 점점 빠르게 도달할 즈음 속도를 줄여 부드럽게 멈춘다.
+
+          IE: -ms-
+          opera: -webkit-
+          safari: -webkit-
+          chrome: -webkit-
+          firefox: -moz-
+
+          animation: test1 5s infinite;
+        } */
+
+        /* #transform {
+        	width: 300px;
+        	height: 100px;
+        	border: solid 1px black;
+        	background-color: yellow;
+
+        }
+        #transform {
+        	transform: translate(50px, 100px);
+        	-ms-transform: translate(50px, 100px);
+        	-webkit-transform: translate(50px, 100px);
+
+          transform: rotate(20deg);
+        	-ms-transform: rotate(20deg);
+        	-webkit-transform: rotate(20deg);
+        }
+
+        div.polaroid {
+        	width: 284px;
+        	padding: 10px 10px 20px 10px;
+        	border: solid 1px #bfbfbf;
+        	box-shadow: 10px 10px 5px #aaa;
+        	background-color: #ddd;
+        	transition: 0.3s;
+        }
+
+        div.polaroid:hover {
+        	tranform: rotate(0);
+        	-webkit-transform: rotate(0);
+        }
+        div.rotate_right {
+        	float: left;
+        	tranform: rotate(7deg);
+        	-ms-transform: rotate(7deg);
+        	-webkit-transform: rotate(7deg);
+        }
+
+        div.rotate_left {
+        	float: left;
+        	tranform: rotate(-8deg);
+        	-ms-transform: rotate(-8deg);
+        	-webkit-transform: rotate(-8deg);
+        	z-index: 1;
+        } */
+
+        /* div {
+        	transform: skewX(20deg);
+        	-ms-transform: skewX(20deg);
+        	-webkit-transform: skewX(20deg);
+        } */
+
+        /* div {
+        /* matrix(scaleX, skewX, skewY, scaleY, translateX, translateY)
+        	transform: matrix(1, -0.3, 0, 1, 0, 0);
+        	-ms-transform: transform: matrix(1, -0.3, 0, 1, 0, 0);
+        	-webkit-transform: transform: matrix(1, -0.3, 0, 1, 0, 0);
+        } */
+
+        .loader {
+        	border: solid 16px #f3f3f3;
+        	border-top: solid 16px #3498db;
+        	width: 120px;
+        	height: 120px;
+        	border-radius: 50%;
+        	animation: spin 1.5s linear infinite;
+        	-webkit-animation: spin 1.5s linear infinite;
+        }
+
+        @keyframes spin {
+        	0% {
+        		transform: rotate(0deg);
+        	}
+        	100% {
+        		transform: rotate(360deg);
+        	}
+        }
+        @-webkit-keyframes spin {
+        	0% {
+        		transform: rotate(0deg);
+        	}
+        	100% {
+        		transform: rotate(360deg);
+        	}
+        }
+
+        /* @keyframes shake {
+        	0%{
+        		transform: translate(1px, 1px) rotate(0deg);
+        	}
+        	10%{
+        		transform: translate(-1px, -1px) rotate(1deg);
+        	}
+        	20%{
+        		transform: translate(-2px, 1px) rotate(-1deg);
+        	}
+        	30%{
+        		transform: translate(1px, 2px) rotate(0deg);
+        	}
+        	40%{
+        		transform: translate(-1px, 1px) rotate(1deg);
+        	}
+        	50%{
+        		transform: translate(1px, -1px) rotate(-2deg);
+        	}
+        	60%{
+        		transform: translate(2px, 1px) rotate(1deg);
+        	}
+        	70%{
+        		transform: translate(-1px, 2px) rotate(2deg);
+        	}
+        	80%{
+        		transform: translate(2px, -1px) rotate(1deg);
+        	}
+        	90%{
+        		transform: translate(-1px, 2px) rotate(0deg);
+        	}
+        	100%{
+        		transform: translate(2px, 1px) rotate(-1deg);
+        	}
+        }
+
+        img:hover {
+        	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        	animation: shake 0.5s infinite;
+        } */
+      }
     </style>
   </head>
   <body>
@@ -64,6 +248,22 @@
         </a>
       </div>
     </div>
+
+    <div class="loader"></div>
+    <!-- <div id="transform">
+      123456
+    </div>
+
+    <div class="polaroid rotate_right">
+    	<img src="/WebPro/css/images/cinqueterre.jpg" alt="" width="284"
+    		height="213">
+    	<p class="caption">Lorem ipsum dolor sit.</p>
+    </div>
+    <div class="polaroid rotate_left">
+    	<img src="/WebPro/css/images/pulpitrock.jpg" alt="" width="284"
+    		height="213">
+    	<p class="caption">Lorem ipsum dolor sit.</p>
+    </div> -->
   </body>
   <!--
     transition-property: width; /* 변화 탐지 */
