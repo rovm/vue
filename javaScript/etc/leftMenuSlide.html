@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title></title>
+
+    <script type="text/javascript">
+
+    </script>
+    <style>
+      #mySideNav a {
+        position: absolute;
+        padding: 15px;
+        width: 100px;
+        text-decoration: none;
+        font-size: 20px;
+        color: black;
+        border-radius: 0 5px 5px 0;
+        left: -80px; /* 왼쪽에 파묻기 */
+        transition: 0.3s;
+      }
+
+      #mySideNav a:hover {
+        background-color: #f4d36e;
+        left: 0;
+      }
+
+      #mySideNav a i {
+        float: right;
+      }
+      #facebook {
+        top: 20px;
+        background-color: blue;
+      }
+      #twitter {
+        top: 80px;
+        background-color: aqua;
+      }
+      #google {
+        top: 140px;
+        background-color: yellow;
+      }
+      #youtube {
+        top: 200px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="mySideNav">
+        <a href="#"id="facebook">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="#" id="twitter">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#" id="google">
+          <i class="fa fa-google"></i>
+        </a>
+        <a href="#" id="youtube">
+          <i class="fa fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </body>
+  <!--
+    transition-property: width; /* 변화 탐지 */
+    transition-duration: 2s; /* 변화에 걸리는 시간 */
+    transition-delay: 0; /* 변화 시작시간 */
+    transition-timing-function: linear; /* 변화율 조정속성 */
+    transition: width 2s linear 1s;
+  -->
+</html>
