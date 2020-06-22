@@ -188,6 +188,26 @@
         	}
         }
 
+        #bird{
+          width: 60px;
+          height: 60px;
+          left: -60px;
+          position: absolute;
+          animation-name: flying;
+          animation-duration:3.5s;
+          animation-duration: leaner;
+          animation-iteration-count:infinite;
+          animation-fill-mode: forwards;
+        }
+
+        @-webkit-keyframes flying {
+          0% {
+            left:0px;
+          }
+          100% {
+            left:500px;
+        }
+
         /* @keyframes shake {
         	0%{
         		transform: translate(1px, 1px) rotate(0deg);
@@ -250,6 +270,8 @@
     </div>
 
     <div class="loader"></div>
+
+    <object type="image/svg+xml" data="bird.svg" id="bird">현재 브라우저는 iframe을 지원하지 않습니다.</object>
     <!-- <div id="transform">
       123456
     </div>
