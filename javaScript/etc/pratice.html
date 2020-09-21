@@ -5,28 +5,24 @@
     <meta charset="utf-8">
     <title>javaScript 테스트 입니다.</title>
     <script type="text/javascript">
-      var cmp = '하하하'
-      console.log(`${cmp}`)
+      var defaultPerson = {
+        name: {
+          first: "사자",
+          last: "킴"
+        },
+        favActivity: "러닝"
+      }
 
-    const logActivity = function logActivity(name, activity) {
-      console.log(`${name}은(는) ${activity}를 좋아합니다.`)
-    }
-
-    logActivity('여우', '토끼')
-
-    var defaultPerson = {
-      name: {
-        first: "사자",
-        last: "킴"
-      },
-      favActivity: "러닝"
-    }
-
-    function logActivity2(p=defaultPerson){
-      console.log(`성은 ${p.name.last}요, 이름은 ${p.name.first}이며, 취미는 ${p.favActivity} 입니다.`)
-    }
-
-    logActivity2()
+      const logActivity = {
+        activity1 : (name, activity) => {
+          console.log(`${name}은(는) ${activity}를 좋아합니다.`)
+        },
+        activity2 : (p) => {
+          console.log(`성은 ${p.name.last}요, 이름은 ${p.name.first}이며, 취미는 ${p.favActivity} 입니다.`)
+        }
+      }
+      logActivity.activity1('여우', '토끼')
+      logActivity.activity2(defaultPerson)
 
     </script>
   </head>
