@@ -17,12 +17,17 @@
         activity1 : (name, activity) => {
           console.log(`${name}은(는) ${activity}를 좋아합니다.`)
         },
-        activity2 : (p) => {
+        activity2 : p => {
           console.log(`성은 ${p.name.last}요, 이름은 ${p.name.first}이며, 취미는 ${p.favActivity} 입니다.`)
+        },
+        activity3 : function a3() {
+          console.log("기본형입니다.")
         }
       }
+
       logActivity.activity1('여우', '토끼')
       logActivity.activity2(defaultPerson)
+      logActivity.activity3()
 
     </script>
   </head>
