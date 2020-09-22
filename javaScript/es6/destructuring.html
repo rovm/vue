@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>디스트럭처링</title>
+    <script type="text/javascript">
+      var data = {
+        name : "여우",
+        age : "20",
+        gender : "M",
+        hobbies : ["수영","야구","축구"]
+      }
+
+      function printUserInformation(data){
+          const {name, age, gender, hobbies} = data;
+          const[firstHobby] = data.hobbies;
+
+          console.log(`이름: ${name}`)
+          console.log(`나이: ${age}`)
+          console.log(`가장 좋아하는 취미: ${firstHobby}`)
+      }
+
+      printUserInformation(data)
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
