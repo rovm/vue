@@ -29,6 +29,33 @@
       logActivity.activity2(defaultPerson)
       logActivity.activity3()
 
+      // var gangwon = {
+      //   resorts: ["용평","평창","강촌","강릉","홍천"],
+      //   print: function(delay=1000){
+      //     setTimeout(function(){
+      //       console.log(this.resorts.join(","))
+      //     },delay)
+      //   }
+      // }
+      /* 위의 강원 객체에서 this.resorts가 undefined인 이유
+      * print의 this의 객체는 gangwon
+      * setTimeout의 this 객체는 window의 객체
+      */
+
+      var gangwon = {
+        resorts: ["용평","평창","강촌","강릉","홍천"],
+        print: function(delay=1000){
+          setTimeout(() => {
+            console.log(this.resorts.join(","))
+          },delay)
+        }
+      }
+      /* 위의 강원 객체에서 this가 가능한 이유
+      * 애로우함수는 새로운 this 객체영역을 만들어내지 않는다.
+      */
+
+       gangwon.print()
+
     </script>
   </head>
   <body>
