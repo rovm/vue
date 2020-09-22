@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>파라미터 내부 변수 선언</title>
+    <script type="text/javascript">
+      var error = {
+        errorCode : 'ERR6919',
+        errorMessage : '원인불명의 오류입니다.'
+      }
+
+      function printError({
+        errorCode,
+        errorMessage: msg
+      }){
+        console.log(`에러코드: ${errorCode}`)
+        console.log(`메시지: ${msg}`)
+      }
+
+      printError(error)
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
