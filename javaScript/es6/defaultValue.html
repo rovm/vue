@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>파라미터 내부 변수 선언</title>
+    <script type="text/javascript">
+      const sayName = (name = 'World') => {
+        console.log(`Hello, ${name}!`)
+      }
+
+      sayName()
+
+      function drawES6Chart({size = 'big', cords = {x: 0, y: 0}, radius = 25} = {}) {
+        console.log(size, cords, radius);
+        console.log(`${size} ${cords.x} ${cords.y} ${radius}`);
+      }
+
+      drawES6Chart({
+        cords: {x: 18, y: 30},
+        radius: 30
+      });
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
