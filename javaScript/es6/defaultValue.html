@@ -20,6 +20,13 @@
         cords: {x: 18, y: 30},
         radius: 30
       });
+
+      const friends = ['Jack','Jill','Tom']
+      textToFriends("msg" , ...friends)
+
+      function textToFriends(message, ...friends) {
+        console.log(message, friends);
+      }
     </script>
   </head>
   <body>
