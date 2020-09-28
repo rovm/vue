@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>파라미터 내부 변수 선언</title>
+    <script type="text/javascript">
+      var sandwich = {
+        bread: "더치 크런치",
+        meat: "참치",
+        cheese: "스위스",
+        toppings: ["상추","토마토","머스타드"]
+      }
+
+      var {bread, meat} = sandwich
+
+      console.log(bread, meat)
+
+      bread = "마늘"
+      meat = "칠면조"
+
+      console.log(bread)
+      console.log(meat)
+
+      console.log(sandwich.bread, sandwich.meat)
+
+      var lordify = regularPerson => {
+        console.log(`캔터베리의 ${regularPerson.firstName}`)
+      }
+
+      var regularPerson = {
+        firstName: "ox",
+        lastName: "F"
+      }
+
+      lordify(regularPerson)
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
