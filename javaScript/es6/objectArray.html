@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>파라미터 내부 변수 선언</title>
     <script type="text/javascript">
+    //구조 분해를 사용한 대입
       var sandwich = {
         bread: "더치 크런치",
         meat: "참치",
@@ -41,6 +42,33 @@
       var [,secondName] = ["용평","평창","강촌"]
       console.log(`두번째: ${secondName}`)
 
+      //객체 리터럴 개선
+      var name = "Tallac"
+      var elevation = 9738
+      var print = ()=> {
+        console.log(`${this.name} 산의 높이는 ${this.elevation} 피트입니다.`)
+        //console.log(`${this}`) 윈도우 객체임
+      }
+
+      var funHike = {name, elevation, print}
+
+      console.log(funHike)
+
+      funHike.print()
+
+      //새로운 방식의 객체 선언
+      const skier = {
+        name,
+        sound,
+        powderYell(){
+          let yell = this.sound.toUpperCase()
+          console.log(`${yell} ${yell} ${yell}!!!`)
+        },
+        speed(mph){
+          this.speed = mph
+          console.log('속력(mph):',mph)
+        }
+      }
     </script>
   </head>
   <body>
