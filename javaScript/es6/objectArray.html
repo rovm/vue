@@ -57,18 +57,34 @@
       funHike.print()
 
       //새로운 방식의 객체 선언
-      const skier = {
-        name,
-        sound,
-        powderYell(){
-          let yell = this.sound.toUpperCase()
-          console.log(`${yell} ${yell} ${yell}!!!`)
-        },
-        speed(mph){
-          this.speed = mph
-          console.log('속력(mph):',mph)
-        }
-      }
+      // const skier = {
+      //   name,
+      //   sound,
+      //   powderYell(){
+      //     let yell = this.sound.toUpperCase()
+      //     console.log(`${yell} ${yell} ${yell}!!!`)
+      //   },
+      //   speed(mph){
+      //     this.speed = mph
+      //     console.log('속력(mph):',mph)
+      //   }
+      // }
+
+      //스프레드 연산자
+      var peaks = ["대청봉","중청봉","소청봉"]
+      var canyons = ["천불동계곡","가야동계곡"]
+      var seoraksan = [...peaks, ...canyons]
+
+      console.log(seoraksan.join(','))
+
+      var [last] = peaks.reverse()
+      console.log(last)
+      console.log(peaks.join(','))
+
+      var peaks = ["대청봉","중청봉","소청봉"]
+      var [last] = [...peaks].reverse()
+      console.log(last)
+      console.log(peaks.join(','))
     </script>
   </head>
   <body>
