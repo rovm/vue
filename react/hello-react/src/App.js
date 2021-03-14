@@ -1,10 +1,8 @@
 import React from 'react';
-import MyComponent from './component/MyComponent'
+import Counter from './component/Counter';
 
 const App = () => {
-  //return <MyComponent name="React"/>;
-  //return <MyComponent />;
-  return <MyComponent name="React" favoriteNumber={1}>리액트</MyComponent>
+  return <Counter/>
 };
 
 
