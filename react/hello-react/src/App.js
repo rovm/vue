@@ -1,8 +1,8 @@
 import React from 'react';
-import Counter from './component/Counter';
+import Say from './component/Say';
 
 const App = () => {
-  return <Counter/>
+  return <Say/>
 };
 
 
