@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 class EventPratice extends Component{
     state ={
+        username: '',
         message : ''
     }
 
@@ -13,15 +14,27 @@ class EventPratice extends Component{
 
     handleChange = (e) => {
         this.setState({
-            message:e.target.value
+            //message:e.target.value
+            [e.target.name]:e.target.value
         });
     }
 
     handleClick = () => {
-        alert(this.state.message);
-        this.serState({
+        // alert(this.state.message);
+        // this.serState({
+        //     message:''
+        // });
+        alert(this.state.username + ': ' + this.state.message)
+        this.setState({
+            username:'',
             message:''
         });
+    }
+
+    handleKeyPress = (e) =>{
+        if(e.key == 'Enter'){
+            this.handleClick();
+        }
     }
 
     render(){
@@ -31,11 +44,21 @@ class EventPratice extends Component{
 
                 <input
                     type='text'
+                    name='username'
+                    placeholder='사용자명'
+                    value={this.state.username}
+                    onChange={this.handleChange}
+                />
+
+                <input
+                    type='text'
                     name='message'
                     placeholder='아무거나 입력해 보세요'
-                    value={this.state.value}
+                    value={this.state.message}
                     onChange={this.handleChange}
-                ></input>
+                    onKeyPress={this.handleKeyPress}
+                />
+
                 <button onClick={this.handleClick}>확인</button>
             </div>
         ); 
