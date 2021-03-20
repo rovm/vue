@@ -1,0 +1,31 @@
+import React, {Component} from 'react';
+
+class EventPratice extends Component{
+    state ={
+        message : ''
+    }
+
+    render(){
+        return(
+            <div>
+                <h1>이벤트 연습</h1>
+
+                <input
+                    type='text'
+                    name='message'
+                    placeholder='아무거나 입력해 보세요'
+                    value={this.state.value}
+                    onChange={
+                        (e)=>{
+                            this.setState({
+                                message: e.target.value
+                            })
+                        }
+                    }
+                ></input>
+            </div>
+        ); 
+    }
+}
+
+export default EventPratice;

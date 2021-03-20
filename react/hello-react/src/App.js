@@ -1,8 +1,8 @@
 import React from 'react';
-import Say from './component/Say';
+import EventPratice from './component/EventPratice';
 
 const App = () => {
-  return <Say/>
+  return <EventPratice/>
 };
 
 
