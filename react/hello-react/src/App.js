@@ -1,9 +1,20 @@
-import React from 'react';
-import VaildationSample from './component/VaildationSample';
+import React, { Component } from 'react';
+import ScrollBox from './component/ScrollBox';
 
-const App = () => {
-  return <VaildationSample/>
-};
+class App extends Component{
+  render(){
+    return(
+      <div>
+        <ScrollBox ref={(ref)=> this.scrollBox=ref}/>
+        <button
+          onClick={() => this.scrollBox.scrollToBottom()}
+        >
+          맨밑으로
+        </button>
+      </div>
+    )
+  }
+}
 
 
 export default App;
