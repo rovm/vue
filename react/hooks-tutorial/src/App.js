@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import Counter from'./component/Counter';
+import React from 'react';
+import Info from'./component/Info';
 
 const App = () => {
-  return <Counter/>
+  return <Info/>
 }
 
 export default App;

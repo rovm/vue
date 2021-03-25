@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Info from'./component/Info';
+import Info from'./component/Info_01';
 
 const App = () => {
   const [visible, setVisible] = useState(false);
