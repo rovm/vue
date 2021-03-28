@@ -3,7 +3,7 @@ import '../css/SassComponent.scss';
 
 const SassComponent = () => {
     return (
-        <div class="SassComponent">
+        <div className="SassComponent">
             <div className="box red"/>
             <div className="box orange"/>
             <div className="box yellow"/>
