@@ -1,4 +1,3 @@
-/* jsconfig.json 에러 발생시 vscode 재실행시 오류가 사라짐*/
 {
     "compilerOptions": {
         "target": "es6"
