@@ -7,7 +7,7 @@ import {
 import cn from 'classnames'
 import './TodoListItem.scss';
 
-const TodoListItem = ({todo, onREmove, onToggle, style}) => {
+const TodoListItem = ({todo, onRemove, onToggle, style}) => {
     const {id, text, checked} = todo;
     return(
         <div className="TodoListItem-virtualized" style={style}>
@@ -16,7 +16,7 @@ const TodoListItem = ({todo, onREmove, onToggle, style}) => {
                     {checked ? <MdCheckBox/> : <MdCheckBoxOutlineBlank/>}
                     <div className="text">{text}</div>
                 </div>
-                <div className="remove" onClick={() => onREmove(id)}>
+                <div className="remove" onClick={() => onRemove(id)}>
                     <MdRemoveCircleOutline />
                 </div>
             </div>

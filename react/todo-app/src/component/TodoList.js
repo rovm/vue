@@ -6,6 +6,7 @@ import './TodoList.scss';
 const TodoList = ({todos, onRemove, onToggle}) => {
     const rowRenderer = useCallback(
         ({index, key, style}) => {
+            console.log(index, key, style)
             const todo = todos[index];
             return (
                 <TodoListItem 
