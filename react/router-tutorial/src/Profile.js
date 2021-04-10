@@ -1,4 +1,5 @@
 import React from 'react';
+import WithRoterSample from './WithRoterSample';
 
 const data = {
     velopert: {
@@ -23,6 +24,7 @@ const Profile = ({match}) => {
                 {username}({profile.name})
             </h3>
             <p>{profile.description}</p>
+            <WithRoterSample/>
         </div>
     )
 }
