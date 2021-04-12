@@ -38,7 +38,7 @@ const NewsItem = ({article}) => {
 
 
     return (
-        <newsItemBlock>
+        <NewsItemBlock>
             {urlToImage && (
                 <div classNAme="thumbnail">
                     <a href={url} target="_blank" rel="noopener noreferrer">
@@ -54,7 +54,7 @@ const NewsItem = ({article}) => {
                 </h2>
                 <p>{description}</p>
             </div>
-        </newsItemBlock>
+        </NewsItemBlock>
     );
 }
 
