@@ -1,6 +1,7 @@
 import React from 'react';
 // import axios from 'axios';
 import NewsList from './components/NewsList';
+import Categories from './components/Categories';
 
 const App = () => {
   // const [data, setData] = useState(null);
@@ -21,7 +22,12 @@ const App = () => {
   //     {data && <textarea rows={7} value={JSON.stringify(data, null, 1)} readOnly={true}/>}
   //   </div>
   // )
-  return <NewsList/>
+  return (
+    <>
+      <Categories/>
+      <NewsList/>
+    </>
+  )
 };
 
 export default App;
