@@ -4,9 +4,6 @@ import NewsList from '../components/NewsList';
 
 const NewsPage = ({match}) => {
     // 카테고리가 선택되지 않았으면 기본값 all로 설정
-    console.log(match);
-    console.log(match.param);
-    console.log(`match ${match.params.category}`);
     const category = match.params.category || 'all';
 
     return (
