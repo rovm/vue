@@ -28,7 +28,7 @@ function reducer(state= initialState, action){
         case INCREASE:
             return {
                 ...state,
-                counter: state.counter + DeviceAcceleration.difference
+                counter: state.counter + action.difference
             };
         case DECREASE: {
             return {
@@ -56,3 +56,14 @@ const render = () => {
 };
 
 render();
+store.subscribe(render);
+
+divToggle.onclick = () => {
+    store.dispatch(toggleSwitch());
+};
+btnIncrease.onclick = () => {
+    store.dispatch(increase(1));
+};
+btnDecrease.onclick = () => {
+    store.dispatch(decrease());
+}
