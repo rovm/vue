@@ -1,5 +1,4 @@
 import {handleActions} from 'redux-actions';
-import rootReducer from '.';
 import * as api from '../lib/api';
 
 const GET_POST = 'sample/GET_POST';
@@ -109,4 +108,4 @@ const sample = handleActions(
     initialState
 );
 
-export default rootReducer;
+export default sample;
