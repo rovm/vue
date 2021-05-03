@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import rootReducer from './modules';
+import rootReducer, {rootSaga} from './modules';
 // import loggerMiddleware from './lib/loggerMiddleware';
 import {createLogger} from 'redux-logger';
 import ReduxThunk from 'redux-thunk';
