@@ -4,6 +4,43 @@ import express from 'express';
 import {StaticRouter} from 'react-router-dom';
 import App from './App';
 import path from 'path';
+import fs from 'fs';
+
+const mainfest = JSON.parse(
+    fs.readFileSync(path.resolve('./build/asset-manifest.json'), 'utf8')
+);
+
+const chunks = Object.keys(mainfest.files)
+                     .filter(key => /chunks\.js$/.exec(key))
+                     .map(key => `<script src="${mainfest.files[key]}"></script>`)
+                     .join('');
+
+function createPage(root){
+    return `<!DOCTYPE html>
+                <html lang="en">
+                    <head>
+                        <meta charset="utf-8"/>
+                        <link rel="shortcut icon" href="/favicon.ico"/>
+                        <meta
+                            name="viewport"
+                            content="width:device-width, initial-scale=1, shrink-to-fit=no"
+                        />
+                        <mata name="them=color" content="#000000"/>
+                        <title>React App</title>
+                        <link href="${mainfest.files['main.css']}" rel="stylesheet"/>
+                    </head>
+                    <body>
+                        <noscript>You need to enable JavaScript to run this app.</noscript>
+                        <div id="root">
+                            ${root}
+                        </div>
+                        <script src="${mainfest.files['runtime-main.js']}"></script>
+                        ${chunks}
+                        <script src="${mainfest.files['main.js']}"></script>
+                    </body>
+                </html>
+             `;
+}
 
 const app = express();
 
@@ -17,7 +54,8 @@ const serverRender = (req, res, next) => {
         </StaticRouter>
     )
     const root = ReactDOMServer.renderToString(jsx);
-    res.send(root);
+    res.send(createPage(root));
+    //res.send(root);
 };
 
 const serve = express.static(path.resolve('./build'), {
