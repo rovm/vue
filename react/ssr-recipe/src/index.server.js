@@ -3,6 +3,7 @@ import ReactDOMServer from 'react-dom/server';
 import express from 'express';
 import {StaticRouter} from 'react-router-dom';
 import App from './App';
+import path from 'path';
 
 const app = express();
 
@@ -19,6 +20,11 @@ const serverRender = (req, res, next) => {
     res.send(root);
 };
 
+const serve = express.static(path.resolve('./build'), {
+    index: false 
+})
+
+app.use(serve)
 app.use(serverRender);
 
 //5000 포트로 서버를 가동합니다.
