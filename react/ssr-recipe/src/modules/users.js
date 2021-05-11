@@ -45,7 +45,7 @@ function users(state = initialState, action){
         case GET_USERS_SUCCESS:
             return {
                 ...state,
-                loading: {...state.loading, users: flase},
+                loading: {...state.loading, users: false},
                 users: action.payload.data
             };
         case GET_USERS_FAILURE:
