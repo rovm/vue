@@ -1,4 +1,4 @@
-import Post from '../../models/psot';
+import Post from '../../models/post';
 
 export const write = async ctx => {
   const {tilte, body, tags} = ctx.request.body;
