@@ -1,3 +1,5 @@
+import Post from "../../models/post";
+
 let postId = 1; // id의 초깃값입니다.
 
 // posts 배열 초기 데이터
@@ -13,13 +15,27 @@ const posts = [
 POST /api/posts
 { title, body }
 */
-export const write = ctx => {
-  // REST API의 request body는 ctx.request.body에서 조회할 수 있습니다.
-  const { title, body } = ctx.request.body;
-  postId += 1; // 기존 postId 값에 1을 더합니다.
-  const post = { id: postId, title, body };
-  posts.push(post);
-  ctx.body = post;
+// export const write = ctx => {
+//   // REST API의 request body는 ctx.request.body에서 조회할 수 있습니다.
+//   const { title, body } = ctx.request.body;
+//   postId += 1; // 기존 postId 값에 1을 더합니다.
+//   const post = { id: postId, title, body };
+//   posts.push(post);
+//   ctx.body = post;
+// };
+export const write = async ctx => {
+  const {title, body, tags} = ctx.request.body;
+  const post = new Post({
+    title,
+    body,
+    tags,
+  });
+  try{
+    await post.save();
+    ctx.body = post;
+  } catch(e){
+    ctx.throw(500, e);
+  }
 };
 
 /* 포스트 목록 조회
