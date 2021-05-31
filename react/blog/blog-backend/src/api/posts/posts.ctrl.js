@@ -71,17 +71,18 @@ export const list = async ctx => {
 };
 
 export const read = async ctx => {
-  const {id} = ctx.params;
-  try{
-    const post = await Post.findById(id).exec();
-    if(!post){
-      ctx.status = 404;
-      return;
-    }
-    ctx.body = post;
-    } catch(e){
-      ctx.throw(e);
-    }
+  // const {id} = ctx.params;
+  // try{
+  //   const post = await Post.findById(id).exec();
+  //   if(!post){
+  //     ctx.status = 404;
+  //     return;
+  //   }
+  //   ctx.body = post;
+  //   } catch(e){
+  //     ctx.throw(e);
+  //   }
+  ctx.body = ctx.state.post;
 };
 
 export const remove = async ctx => {
@@ -125,3 +126,30 @@ export const update = async ctx => {
     ctx.throw(e);
   }
 };
+
+export const getPostById = async (ctx, next) => {
+  const {id} = ctx.params;
+  if(!ObjectId.isValid(id)){
+    ctx.status = 400;
+    return;
+  }
+  try{
+    const post = await Post.findBVyId(id);
+    //포스트가 존재하지 않을 때
+    if(!post){
+      ctx.status = 404; // Not Found 
+      return;
+    }
+  } catch(e){
+    ctx.throw(500, e);
+  }
+}
+
+export const checkOwnPost = (ctx, next) => {
+  const {user, post} = ctx.state;
+  if(post.user._id.toString() !== user._id){
+    ctx.status = 403;
+    return;
+  }
+  return next();
+}
