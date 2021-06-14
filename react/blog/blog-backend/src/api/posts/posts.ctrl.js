@@ -140,6 +140,8 @@ export const getPostById = async (ctx, next) => {
       ctx.status = 404; // Not Found 
       return;
     }
+    ctx.state.post = post;
+    return next();
   } catch(e){
     ctx.throw(500, e);
   }
