@@ -4,7 +4,7 @@ import produce from 'immer';
 const CHANGE_FIELD = 'auth/CHANGE_FIELD';
 const INITIALIZE_FORM = 'auth/INITIALIZE_FORM';
 
-export const cgangeFiled = createAction(
+export const changeField = createAction(
     CHANGE_FIELD,
     ({form, key, value}) => ({
         form, //register, login

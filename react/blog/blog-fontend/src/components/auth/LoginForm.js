@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeFeild, initializeForm } from '../../modules/auth';
+import { changeField, initializeForm } from '../../modules/auth';
 import AuthForm from '../../components/auth/AuthForm';
 
 const LoginForm = () => {
@@ -13,7 +13,7 @@ const LoginForm = () => {
     const onChange = e => {
         const { value, name } = e.target;
         dispatch(
-            changeFeild({
+            changeField({
                 form: 'login',
                 key: name,
                 value
@@ -23,7 +23,7 @@ const LoginForm = () => {
 
     //폼 등록 이벤트 핸들러
     const onSubmit = e => {
-        e.preventDefault;
+        e.preventDefault();
         //구현 예정
     }
 
