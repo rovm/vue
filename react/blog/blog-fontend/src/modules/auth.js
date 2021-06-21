@@ -35,7 +35,7 @@ const auth = handleActions(
             }),
         [INITIALIZE_FORM]: (state, {payload: form}) => ({
             ...state,
-            [form]: initialState[from],
+            [form]: initialState[form],
         }),
     },
     initialState,
