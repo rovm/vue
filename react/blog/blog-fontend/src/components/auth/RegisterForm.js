@@ -61,7 +61,7 @@ const RegisterForm = ({history}) => {
         if(user){
             history.push('/'); // 홈화면 이동
         }
-    }, [user]);
+    }, [history, user]);
 
     return (
         <AuthForm
