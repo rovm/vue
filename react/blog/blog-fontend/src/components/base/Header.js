@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const HeaderBlock = styled.div``;
 
 const Header = () => {
-    returb (
+    return (
         <HeaderBlock>
             
         </HeaderBlock>
