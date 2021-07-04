@@ -13,18 +13,18 @@ import { tempSetUser, check } from './modules/user';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
-  rootReducer, 
+  rootReducer,
   composeWithDevTools(applyMiddleware(sagaMiddleware)),
 );
 
 function loadUser(){
-  console.log("index")
   try {
-    const user = localStorage.getitem('user');
-    console.log(user)
+    const user = localStorage.getItem('user');
+    
+    console.log('USER => ' + user)
     if(!user) return; // 로그인 상태가 아니라면 아무것도 안 함
 
-    store.dispatch(tempSetUser(user));
+    store.dispatch(tempSetUser(JSON.parse(user)));
     store.dispatch(check());
   } catch(e) {
     console.log('localStorage is not working');
