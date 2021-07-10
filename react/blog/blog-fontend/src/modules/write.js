@@ -9,7 +9,7 @@ export const change_filed = createAction(CHANGE_FILED, ({key, value}) => ({
     value,
 }));
 
-const initialize = {
+const initialState = {
     title: '',
     body: '',
     tags: [],
