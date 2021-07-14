@@ -1,14 +1,14 @@
 import React from 'react';
-import TagBox from '../components/write/TagBox';
 import WriteActionButtons from '../components/write/WriteActionButtons';
 import Responsive from '../components/common/Responsive';
 import EditorContainer from '../components/write/EditorContainer';
+import TagBoxContainer from '../components/write/TagBoxContainer';
 
 const WritePage = () => {
     return (
         <Responsive>
             <EditorContainer/>
-            <TagBox/>
+            <TagBoxContainer/>
             <WriteActionButtons/>
         </Responsive>
     );
