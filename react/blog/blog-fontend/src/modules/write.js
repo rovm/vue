@@ -4,7 +4,7 @@ const INITIALIZE = 'write/INITIALIZE'; // 모든 내용 초기화
 const CHANGE_FILED = 'write/CHANGE_FILED'; // 특정 key 값 바꾸기
 
 export const initialize = createAction(INITIALIZE);
-export const change_filed = createAction(CHANGE_FILED, ({key, value}) => ({
+export const changeField = createAction(CHANGE_FILED, ({key, value}) => ({
     key,
     value,
 }));
